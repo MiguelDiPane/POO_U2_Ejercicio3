@@ -14,19 +14,20 @@ class Menu:
             op = int(op)
             if op > len(self.__opciones) or op < 0:
                 input('Opcion invalida, reintente')
-                op = None       
+                op = None         
         else:
-            input('Error: Opcion invalida, debe ingresar un numero entero.')          
+            input('Error: Opcion invalida, debe ingresar un numero entero.')
             op = None
         return op
     
     def showMenu(self):
-        os.system('cls')
+        self.clear_screen()
         print('#-----MENU-----#')
         for opcion in self.__opciones:
             print(opcion)
 
-
+    def clear_screen(self):
+        os.system(['clear','cls'][os.name == 'nt'])
 
 
 
